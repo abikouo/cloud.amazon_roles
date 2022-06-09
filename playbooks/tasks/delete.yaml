@@ -13,7 +13,7 @@
       ec2_instance_info:
         filters:
           instance-type: "{{ bastion_host_type }}"
-          key-name: "{{ sskey_pair_name }}"
+          key-name: "{{ sshkey_pair_name }}"
           vpc-id: "{{ vpc_id }}"
       register: bastion
 
@@ -64,7 +64,7 @@
 
     - name: Delete key pair to connect to the bastion VM
       ec2_key:
-        name: '{{ sskey_pair_name }}'
+        name: '{{ sshkey_pair_name }}'
         state: absent
 
     - name: Delete RDS subnet group

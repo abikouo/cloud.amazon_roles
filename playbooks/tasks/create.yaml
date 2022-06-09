@@ -170,7 +170,7 @@
 
 - name: Create key pair to connect to the VM
   ec2_key:
-    name: '{{ sskey_pair_name }}'
+    name: '{{ sshkey_pair_name }}'
     key_material: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
 
 - name: Create a virtual machine
@@ -178,7 +178,7 @@
     name: "{{ bastion_host_name }}"
     instance_type: "{{ bastion_host_type }}"
     image_id: "{{ images.images.0.image_id }}"
-    key_name: '{{ sskey_pair_name }}'
+    key_name: '{{ sshkey_pair_name }}'
     subnet_id: '{{ subnet.subnet.id }}'
     network:
       assign_public_ip: true

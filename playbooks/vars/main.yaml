@@ -12,7 +12,7 @@ rds_subnet_group_name: '{{ resource_prefix }}-rds-sg'
 public_secgroup_name: "{{ resource_prefix }}-sg"
 rds_secgroup_name: "{{ resource_prefix }}-rds-sec"
 rds_identifier: "{{ resource_prefix }}-rds-01"
-sskey_pair_name: "{{ resource_prefix }}-key"
+sshkey_pair_name: "{{ resource_prefix }}-key"
 
 bastion_host_name: "{{ resource_prefix }}-bastion"
 bastion_host_username: fedora
